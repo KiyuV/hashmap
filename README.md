@@ -1,0 +1,1 @@
+This project aims to implement the Hashmap data structure in Ruby.

@@ -95,11 +95,11 @@ class LinkedList
     false
   end
 
-  def find(value)
+  def find(key)
     node = @head
     index = 0
     until node.nil?
-      return index if node.value == value
+      return index if node.key == key
 
       break if node.next_node.nil?
 

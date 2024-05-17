@@ -3,8 +3,8 @@
 require './lib/node'
 
 class LinkedList
-  def initialize(head = nil)
-    @head = head
+  def initialize
+    @head = nil
     @tail = nil
     @size = 0
   end
@@ -38,7 +38,7 @@ class LinkedList
     if @head.nil?
       nil
     else
-      @head.value
+      @head
     end
   end
 
@@ -46,7 +46,7 @@ class LinkedList
     if @tail.nil?
       nil
     else
-      @tail.value
+      @tail
     end
   end
 
@@ -83,10 +83,10 @@ class LinkedList
     end
   end
 
-  def contains?(value)
+  def contains?(key)
     node = @head
     until node.nil?
-      return true if node.value == value
+      return true if node.key == key
       return false if node.next_node.nil?
 
       node = node.next_node

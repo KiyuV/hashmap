@@ -7,6 +7,6 @@ class Node
     @next_node = next_node
   end
 
-  attr_reader :value
-  attr_accessor :next_node
+  attr_reader :key
+  attr_accessor :next_node, :value
 end

@@ -5,7 +5,8 @@ require './lib/linked_list'
 class HashMap
   def initialize
     @load_factor = 0.75
-    @bucket = Array.new(16)
+    @size = 16
+    @bucket = Array.new(@size)
   end
 
   def set(key, value)
@@ -49,6 +50,46 @@ class HashMap
     else
       nil
     end
+  end
+
+  def length
+    length = 0
+    @bucket.each do |list|
+      next if list.nil?
+      length += list.size
+    end
+    length
+  end
+
+  def clear
+    @bucket = Array.new(@size)
+  end
+
+  def keys
+    keys = []
+    @bucket.each do |list|
+      next if list.nil?
+      keys.concat(list.get_keys) 
+    end
+    keys
+  end
+
+  def values
+    values = []
+    @bucket.each do |list|
+      next if list.nil?
+      values.concat(list.get_values) 
+    end
+    values
+  end
+
+  def entries
+    entries = []
+    @bucket.each do |list|
+      next if list.nil?
+      entries.concat(list.get_entries) 
+    end
+    entries
   end
 
   private

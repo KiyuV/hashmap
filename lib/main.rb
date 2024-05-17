@@ -11,7 +11,8 @@ class Main
     @hashmap.set('john', 'doe')
     @hashmap.set('john', 'smith')
     @hashmap.set('{', 'boe')
-
+    @hashmap.set('peter', 'wright')
+=begin
     p @hashmap.get('jacob')
     p @hashmap.get('john')
 
@@ -20,6 +21,14 @@ class Main
 
     p @hashmap.remove('john')
     p @hashmap.remove('jenny')
+
+    p @hashmap.length
+    p @hashmap.clear
+    
+    p @hashmap.keys
+    p @hashmap.values
+    p @hashmap.entries
+=end
   end
 end
 

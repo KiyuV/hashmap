@@ -156,6 +156,36 @@ class LinkedList
     end
   end
 
+  def get_keys
+    node = @head
+    keys = []
+    until node == nil
+      keys << node.key
+      node = node.next_node
+    end
+    keys
+  end
+
+  def get_values
+    node = @head
+    values = []
+    until node == nil
+      values << node.value
+      node = node.next_node
+    end
+    values
+  end
+
+  def get_entries
+    node = @head
+    entries = []
+    until node == nil
+      entries << [node.key, node.value]
+      node = node.next_node
+    end
+    entries
+  end
+
   def to_s
     node = @head
     until node.nil?

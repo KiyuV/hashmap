@@ -3,15 +3,15 @@
 require './lib/node'
 
 class LinkedList
-  def initialize
-    @head = nil
+  def initialize(head = nil)
+    @head = head
     @tail = nil
     @size = 0
   end
 
-  def append(value)
+  def append(key, value)
     @size += 1
-    new_node = Node.new(value)
+    new_node = Node.new(key, value)
     if @head.nil?
       @head = new_node
     else
@@ -20,9 +20,9 @@ class LinkedList
     @tail = new_node
   end
 
-  def prepend(value)
+  def prepend(key, value)
     @size += 1
-    new_node = Node.new(value)
+    new_node = Node.new(key, value)
     if @head.nil?
       @head = new_node
       @tail = new_node
@@ -111,10 +111,10 @@ class LinkedList
   end
 
   # inserts a new node at the provided index
-  def insert_at(value, index)
+  def insert_at(key, value, index)
     raise IndexError if index >= @size
 
-    return prepend(value) if index.zero?
+    return prepend(key, value) if index.zero?
 
     i = 0
     current_node = @head
@@ -126,7 +126,7 @@ class LinkedList
       i += 1
     end
 
-    current_node.next_node = Node.new(value, following_node)
+    current_node.next_node = Node.new(key, value, following_node)
     @size += 1
     nil
   end

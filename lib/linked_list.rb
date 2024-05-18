@@ -159,7 +159,7 @@ class LinkedList
   def get_keys
     node = @head
     keys = []
-    until node == nil
+    until node.nil?
       keys << node.key
       node = node.next_node
     end
@@ -169,7 +169,7 @@ class LinkedList
   def get_values
     node = @head
     values = []
-    until node == nil
+    until node.nil?
       values << node.value
       node = node.next_node
     end
@@ -179,7 +179,7 @@ class LinkedList
   def get_entries
     node = @head
     entries = []
-    until node == nil
+    until node.nil?
       entries << [node.key, node.value]
       node = node.next_node
     end
